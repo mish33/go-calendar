@@ -1,1 +1,31 @@
 Date manipulation functions.
+
+
+// IsLeap returns true if year is a leap year.
+func IsLeap(year int64) bool
+
+// NextDay advance Time structure to the next day.
+func NextDay(t *time.Time)
+
+// PrevDay adjust Time structure one day behind.
+func PrevDay(t *time.Time)
+
+// NextMonth advance Time structure one month ahead.
+func NextMonth(t *time.Time)
+
+// PrevMonth adjust Time structure one month behind.
+func PrevMonth(t *time.Time)
+
+// Weekday returns day of week number.
+//
+// Use Sakamoto's method (valid for dates in Oct 15, 1582 - Dec 31, 9999)
+// (see http://en.wikipedia.org/wiki/Calculating_the_day_of_the_week )
+//
+// Args:
+//	year (e.g., 1988)
+//	month (1-12)
+//	day of the month (1-31)
+// Returns:
+//	0 = Sunday, 1 = Monday, ...
+//
+func Weekday(year, month, day int) int
